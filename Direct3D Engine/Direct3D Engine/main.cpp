@@ -10,18 +10,6 @@
 
 #include "InputManager.h"
 
-class Actor
-{
-public:
-	void uselessFunction(GLFWwindow* _window, int _action)
-	{
-		if (_action == GLFW_PRESS)
-		{
-			printf_s("uselessFunction \n");
-		}
-	}
-};
-
 int main()
 {
 	const UINT windowWidth = 1280;

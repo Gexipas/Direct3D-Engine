@@ -17,3 +17,10 @@ private:
 	~Singleton() {};
 	//*********************************************
 };
+
+class Class
+{
+	void Function() {}
+
+	int m_memberVariable;
+};
