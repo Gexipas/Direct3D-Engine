@@ -34,15 +34,10 @@ int main()
 
 	InputManager::GetInstance().Init(window);
 
-	Actor* actor = new Actor();
-	Event* callback = new EventClassFunction<Actor>(actor, &Actor::uselessFunction);
-	InputManager::GetInstance().AddInput(GLFW_KEY_W, callback);
-	callback = new EventFunction([](GLFWwindow* _window, int _action)
-		{
-			Event* callback = new EventFunction([](GLFWwindow* _window, int _action) {if (_action == GLFW_PRESS)glfwSetWindowShouldClose(_window, true); });
-			InputManager::GetInstance().AddInput(GLFW_KEY_ESCAPE, callback);
-		});
-	InputManager::GetInstance().AddInput(GLFW_KEY_R, callback);
+	Event* callback = new EventFunction([](GLFWwindow* _window, int _action) {if (_action == GLFW_PRESS)glfwSetWindowShouldClose(_window, true); });
+	InputManager::GetInstance().AddInput(GLFW_KEY_ESCAPE, callback);
+	//InputManager::GetInstance().RemoveInput(GLFW_KEY_ESCAPE, callback);
+
 	while (!glfwWindowShouldClose(window))
 	{			
 		

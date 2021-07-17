@@ -19,7 +19,7 @@ public:
 
 	void addListener(Event* action)
 	{
-		CallbackArray::iterator position = find(actions.begin(), actions.end(), action);
+		ActionsArray::iterator position = find(actions.begin(), actions.end(), action);
 
 		if (position != actions.end())
 		{
@@ -32,7 +32,7 @@ public:
 
 	void removeListener(Event* action)
 	{
-		CallbackArray::iterator position = find(actions.begin(), actions.end(), action);
+		ActionsArray::iterator position = find(actions.begin(), actions.end(), action);
 
 		if (position == actions.end())
 		{
@@ -51,8 +51,8 @@ public:
 	}
 
 private:
-	typedef std::vector<Event*> CallbackArray;
-	CallbackArray actions;
+	typedef std::vector<Event*> ActionsArray;
+	ActionsArray actions;
 };
 
 class InputManager
